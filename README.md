@@ -29,19 +29,19 @@ meta:
 Install Layouts:
 
 ```bash
-$ npm install -D vite-plugin-vue-layouts
+$ npm install -D @toimc/vite-plugin-vue-layouts
 ```
 
 Add to your `vite.config.js`:
 
 ```js
-import Vue from '@vitejs/plugin-vue';
-import Pages from 'vite-plugin-pages';
-import Layouts from "@toimc/vite-plugin-vue-layouts";
+import Vue from '@vitejs/plugin-vue'
+import Pages from 'vite-plugin-pages'
+import Layouts from '@toimc/vite-plugin-vue-layouts'
 
 export default {
   plugins: [Vue(), Pages(), Layouts()],
-};
+}
 ```
 
 In main.ts, you need to add a few lines to import the generated code and setup the layouts.
@@ -57,7 +57,7 @@ const routes = setupLayouts(generatedRoutes)
 const router = createRouter({
   // ...
   routes,
-});
+})
 ```
 
 ## [unplugin-vue-router](https://github.com/posva/unplugin-vue-router)
@@ -67,7 +67,7 @@ import { setupLayouts } from 'virtual:generated-layouts'
 
 const router = createRouter({
   // ...
-  extendRoutes: (routes) => setupLayouts(routes),
+  extendRoutes: routes => setupLayouts(routes),
 })
 ```
 
@@ -76,7 +76,7 @@ If you want type definition of `virtual:generated-layouts`, add `vite-plugin-vue
 ```json
 {
   "compilerOptions": {
-    "types": ["vite-plugin-vue-layouts/client"]
+    "types": ["@toimc/vite-plugin-vue-layouts/client"]
   }
 }
 ```
@@ -98,7 +98,7 @@ To use custom configuration, pass your options to Layouts when instantiating the
 
 ```js
 // vite.config.js
-import Layouts from "@toimc/vite-plugin-vue-layouts";
+import Layouts from '@toimc/vite-plugin-vue-layouts'
 
 export default {
   plugins: [
@@ -108,7 +108,7 @@ export default {
       defaultLayout: 'myDefault'
     }),
   ],
-};
+}
 ```
 
 ### layoutsDirs
@@ -256,7 +256,7 @@ The clientSideLayout uses a simpler [virtual file](https://vitejs.dev/guide/api-
 
 ```js
 // vite.config.js
-import { ClientSideLayout } from "@toimc/vite-plugin-vue-layouts"
+import { ClientSideLayout } from '@toimc/vite-plugin-vue-layouts'
 
 export default {
   plugins: [
@@ -266,6 +266,6 @@ export default {
       importMode: 'sync' // The default will automatically detect -> ssg is sync，other is async
     }),
   ],
-};
+}
 ```
 
