@@ -14,9 +14,6 @@ importers:
       fast-glob:
         specifier: ^3.3.2
         version: 3.3.2
-      local-pkg:
-        specifier: ^0.5.0
-        version: 0.5.0
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.3.4
@@ -64,6 +61,9 @@ importers:
         specifier: ^4.2.5
         version: 4.2.5(vue@3.3.10)
     devDependencies:
+      '@toimc/vite-plugin-vue-layouts':
+        specifier: workspace:*
+        version: link:../..
       '@vitejs/plugin-vue':
         specifier: ^4.5.0
         version: 4.5.1(vite@5.0.5)(vue@3.3.10)
@@ -91,9 +91,6 @@ importers:
       vite-plugin-pages:
         specifier: ^0.32.0
         version: 0.32.0(@vue/compiler-sfc@3.3.10)(vite@5.0.5)
-      vite-plugin-vue-layouts:
-        specifier: workspace:*
-        version: link:../..
 
   examples/spa:
     dependencies:
@@ -104,6 +101,9 @@ importers:
         specifier: ^4.2.5
         version: 4.2.5(vue@3.3.10)
     devDependencies:
+      '@toimc/vite-plugin-vue-layouts':
+        specifier: workspace:*
+        version: link:../..
       '@vitejs/plugin-vue':
         specifier: ^4.5.0
         version: 4.5.1(vite@5.0.5)(vue@3.3.10)
@@ -131,9 +131,6 @@ importers:
       vite-plugin-pages:
         specifier: ^0.32.0
         version: 0.32.0(@vue/compiler-sfc@3.3.10)(vite@5.0.5)
-      vite-plugin-vue-layouts:
-        specifier: workspace:*
-        version: link:../..
 
   examples/ssg:
     dependencies:
@@ -144,6 +141,9 @@ importers:
         specifier: ^4.2.5
         version: 4.2.5(vue@3.3.10)
     devDependencies:
+      '@toimc/vite-plugin-vue-layouts':
+        specifier: workspace:*
+        version: link:../..
       '@vitejs/plugin-vue':
         specifier: ^4.5.0
         version: 4.5.1(vite@5.0.5)(vue@3.3.10)
@@ -177,12 +177,49 @@ importers:
       vite-plugin-pages:
         specifier: ^0.32.0
         version: 0.32.0(@vue/compiler-sfc@3.3.10)(vite@5.0.5)
-      vite-plugin-vue-layouts:
-        specifier: workspace:*
-        version: link:../..
       vite-ssg:
         specifier: ^0.23.5
         version: 0.23.5(critters@0.0.20)(vite@5.0.5)(vue-router@4.2.5)(vue@3.3.10)
+
+  examples/unplugin-vue-router:
+    dependencies:
+      vue:
+        specifier: ^3.3.10
+        version: 3.3.10(typescript@5.3.2)
+    devDependencies:
+      '@toimc/vite-plugin-vue-layouts':
+        specifier: workspace:*
+        version: link:../..
+      '@vitejs/plugin-vue':
+        specifier: ^4.5.0
+        version: 4.5.1(vite@5.0.5)(vue@3.3.10)
+      '@vue/compiler-sfc':
+        specifier: ^3.3.8
+        version: 3.3.10
+      cross-env:
+        specifier: ^7.0.3
+        version: 7.0.3
+      nodemon:
+        specifier: ^3.0.1
+        version: 3.0.2
+      typescript:
+        specifier: ^5.3.2
+        version: 5.3.2
+      unplugin-vue-markdown:
+        specifier: ^0.25.2
+        version: 0.25.2(rollup@4.6.1)(vite@5.0.5)
+      unplugin-vue-router:
+        specifier: ^0.7.0
+        version: 0.7.0(rollup@4.6.1)(vue-router@4.2.5)(vue@3.3.10)
+      vite:
+        specifier: ^5.0.2
+        version: 5.0.5(@types/node@20.10.3)
+      vite-plugin-inspect:
+        specifier: ^0.8.1
+        version: 0.8.1(rollup@4.6.1)(vite@5.0.5)
+      vite-plugin-pages:
+        specifier: ^0.32.0
+        version: 0.32.0(@vue/compiler-sfc@3.3.10)(vite@5.0.5)
 
   examples/vitesse:
     dependencies:
@@ -226,6 +263,9 @@ importers:
       '@intlify/unplugin-vue-i18n':
         specifier: ^1.5.0
         version: 1.5.0(rollup@4.6.1)(vue-i18n@9.8.0)
+      '@toimc/vite-plugin-vue-layouts':
+        specifier: workspace:*
+        version: link:../..
       '@types/markdown-it-link-attributes':
         specifier: ^3.0.4
         version: 3.0.4
@@ -328,9 +368,6 @@ importers:
       vite-plugin-vue-devtools:
         specifier: ^1.0.0-rc.6
         version: 1.0.0-rc.6(pug@3.0.2)(rollup@4.6.1)(vite@5.0.5)
-      vite-plugin-vue-layouts:
-        specifier: workspace:*
-        version: link:../..
       vite-plugin-webfont-dl:
         specifier: ^3.9.1
         version: 3.9.1(debug@4.3.4)(vite@5.0.5)
@@ -3884,6 +3921,7 @@ packages:
     resolution: {integrity: sha512-nc0Axzp/0FILLEVsm4fNwLCwMttvhEI263QtVPQcbpfZZ3ts0hLsZGOpE6czNlid7CJ9MlyH8reXkpsf3YUY4w==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: true
 
   /agent-base@6.0.2:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
@@ -4358,8 +4396,8 @@ packages:
   /call-bind@1.0.2:
     resolution: {integrity: sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==}
     dependencies:
-      function-bind: 1.1.1
-      get-intrinsic: 1.1.1
+      function-bind: 1.1.2
+      get-intrinsic: 1.2.2
     dev: true
 
   /call-bind@1.0.5:
@@ -5039,13 +5077,6 @@ packages:
   /define-lazy-prop@3.0.0:
     resolution: {integrity: sha512-N+MeXYoqr3pOgn8xfyRPREN7gHakLYjhsHhWGT3fWAiL4IkAt0iDw14QiiEm2bE30c5XX5q0FtAA3CK5f9/BUg==}
     engines: {node: '>=12'}
-    dev: true
-
-  /define-properties@1.1.3:
-    resolution: {integrity: sha512-3MqfYKj2lLzdMSf8ZIZE/V+Zuy+BgD6f164e8K2w7dgnpKArBDerGYpM46IYYcjnkdPNMjPk9A6VFB8+3SKlXQ==}
-    engines: {node: '>= 0.4'}
-    dependencies:
-      object-keys: 1.1.1
     dev: true
 
   /define-properties@1.2.1:
@@ -6214,10 +6245,6 @@ packages:
     dev: true
     optional: true
 
-  /function-bind@1.1.1:
-    resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
-    dev: true
-
   /function-bind@1.1.2:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
     dev: true
@@ -6248,7 +6275,7 @@ packages:
   /get-intrinsic@1.1.1:
     resolution: {integrity: sha512-kWZrnVM42QCiEA2Ig1bG8zjoIMOgxWwYCEeNdwY6Tv/cOSeGpcoX4pXHfKUxNKVoArnrEr2e9srnAxxGIraS9Q==}
     dependencies:
-      function-bind: 1.1.1
+      function-bind: 1.1.2
       has: 1.0.3
       has-symbols: 1.0.3
     dev: true
@@ -6462,7 +6489,7 @@ packages:
     resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}
     engines: {node: '>= 0.4.0'}
     dependencies:
-      function-bind: 1.1.1
+      function-bind: 1.1.2
     dev: true
 
   /hasown@2.0.0:
@@ -6849,7 +6876,7 @@ packages:
     resolution: {integrity: sha512-8Q7EARjzEnKpt/PCD7e1cgUS0a6X8u5tdSiMqXhojOdoV9TsMsiO+9VLC5vAmO8N7/GmXn7yjR8qnA6bVAEzfA==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.2
+      call-bind: 1.0.5
       has-tostringtag: 1.0.0
     dev: true
 
@@ -6882,7 +6909,7 @@ packages:
     resolution: {integrity: sha512-gDYaKHJmnj4aWxyj6YHyXVpdQawtVLHU5cb+eztPGczf6cjuTdwve5ZIEfgXqH4e57An1D1AKf8CZ3kYrQRqYA==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.2
+      call-bind: 1.0.5
       has-tostringtag: 1.0.0
     dev: true
 
@@ -7049,7 +7076,7 @@ packages:
     resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.2
+      call-bind: 1.0.5
       has-tostringtag: 1.0.0
     dev: true
 
@@ -7121,8 +7148,8 @@ packages:
   /is-weakset@2.0.2:
     resolution: {integrity: sha512-t2yVvttHkQktwnNNmBQ98AhENLdPUTDTE21uPqAQ0ARwQfGeQKRVS0NNurH7bTf7RrvcVn1OOge45CnBeHCSmg==}
     dependencies:
-      call-bind: 1.0.2
-      get-intrinsic: 1.1.1
+      call-bind: 1.0.5
+      get-intrinsic: 1.2.2
     dev: true
 
   /is-wsl@2.2.0:
@@ -7332,11 +7359,12 @@ packages:
       acorn: 8.11.2
       eslint-visitor-keys: 3.4.3
       espree: 9.6.1
-      semver: 7.3.5
+      semver: 7.5.4
     dev: true
 
   /jsonc-parser@3.2.0:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
+    dev: true
 
   /jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
@@ -7495,6 +7523,7 @@ packages:
     dependencies:
       mlly: 1.4.2
       pkg-types: 1.0.3
+    dev: true
 
   /locate-path@5.0.0:
     resolution: {integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==}
@@ -7901,6 +7930,7 @@ packages:
       pathe: 1.1.1
       pkg-types: 1.0.3
       ufo: 1.3.2
+    dev: true
 
   /mrmime@1.0.0:
     resolution: {integrity: sha512-a70zx7zFfVO7XpnQ2IX1Myh9yY4UYvfld/dikWRnsXxbyvMcfz+u6UfgNAtH+k2QqtJuzVpv6eLTx1G2+WKZbQ==}
@@ -8139,8 +8169,8 @@ packages:
     resolution: {integrity: sha512-3cyDsyHgtmi7I7DfSSI2LDp6SK2lwvtbg0p0R1e0RvTqF5ceGx+K2dfSjm1bKDMVCFEDAQvy+o8c6a7VujOddw==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: 1.0.2
-      define-properties: 1.1.3
+      call-bind: 1.0.5
+      define-properties: 1.2.1
     dev: true
 
   /object-keys@1.1.1:
@@ -8426,6 +8456,7 @@ packages:
 
   /pathe@1.1.1:
     resolution: {integrity: sha512-d+RQGp0MAYTIaDBIMmOfMwz3E+LOZnxx1HZd5R18mmCZY0QBlK0LDZfPc8FW8Ed2DlvsuE6PRjroDY+wg4+j/Q==}
+    dev: true
 
   /pathval@1.1.1:
     resolution: {integrity: sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==}
@@ -8490,6 +8521,7 @@ packages:
       jsonc-parser: 3.2.0
       mlly: 1.4.2
       pathe: 1.1.1
+    dev: true
 
   /pluralize@8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
@@ -9145,14 +9177,6 @@ packages:
   /semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
-    dev: true
-
-  /semver@7.3.5:
-    resolution: {integrity: sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dependencies:
-      lru-cache: 6.0.0
     dev: true
 
   /semver@7.5.4:
@@ -10012,6 +10036,7 @@ packages:
 
   /ufo@1.3.2:
     resolution: {integrity: sha512-o+ORpgGwaYQXgqGDwd+hkS4PuZ3QnmqMMxRuajK/a38L6fTpcE5GPIfrf+L/KemFzfUpeUQc1rRS1iDBozvnFA==}
+    dev: true
 
   /uglify-js@3.15.2:
     resolution: {integrity: sha512-peeoTk3hSwYdoc9nrdiEJk+gx1ALCtTjdYuKSXMTDqq7n1W7dHPqWDdSi+BPL0ni2YMeHD7hKUSdbj3TZauY2A==}
@@ -11130,6 +11155,7 @@ packages:
 
   /workbox-google-analytics@7.0.0:
     resolution: {integrity: sha512-MEYM1JTn/qiC3DbpvP2BVhyIH+dV/5BjHk756u9VbwuAhu0QHyKscTnisQuz21lfRpOwiS9z4XdqeVAKol0bzg==}
+    deprecated: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
     dependencies:
       workbox-background-sync: 7.0.0
       workbox-core: 7.0.0

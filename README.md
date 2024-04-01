@@ -37,7 +37,7 @@ Add to your `vite.config.js`:
 ```js
 import Vue from '@vitejs/plugin-vue';
 import Pages from 'vite-plugin-pages';
-import Layouts from 'vite-plugin-vue-layouts';
+import Layouts from "@toimc/vite-plugin-vue-layouts";
 
 export default {
   plugins: [Vue(), Pages(), Layouts()],
@@ -98,7 +98,7 @@ To use custom configuration, pass your options to Layouts when instantiating the
 
 ```js
 // vite.config.js
-import Layouts from 'vite-plugin-vue-layouts';
+import Layouts from "@toimc/vite-plugin-vue-layouts";
 
 export default {
   plugins: [
@@ -256,7 +256,7 @@ The clientSideLayout uses a simpler [virtual file](https://vitejs.dev/guide/api-
 
 ```js
 // vite.config.js
-import { ClientSideLayout } from 'vite-plugin-vue-layouts'
+import { ClientSideLayout } from "@toimc/vite-plugin-vue-layouts"
 
 export default {
   plugins: [

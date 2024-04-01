@@ -56,7 +56,7 @@ export default function Layout(userOptions: UserOptions = {}): Plugin {
   // const pagesDirs = resolveDirs(options.pagesDirs, config.root)
 
   return {
-    name: 'vite-plugin-vue-layouts',
+    name: "@toimc/vite-plugin-vue-layouts",
     enforce: 'pre',
     configResolved(_config) {
       config = _config
@@ -146,7 +146,7 @@ export function ClientSideLayout(options?: clientSideOptions): Plugin {
     importMode = process.env.VITE_SSG ? 'sync' : 'async',
   } = options || {}
   return {
-    name: 'vite-plugin-vue-layouts',
+    name: "@toimc/vite-plugin-vue-layouts",
     resolveId(id) {
       const MODULE_ID = MODULE_IDS.find(MODULE_ID => id === MODULE_ID)
       if (MODULE_ID)
